@@ -9,10 +9,9 @@
 </head>
 
 <body>
-   {% for result in results%}
-   {% if forloop.counter == 1 %}
+    {% for result in results %}
     <div style="text-align: center;">
-         <h2>{{result.category}}</h2>
+        <h2>{{result.category}}</h2>
 
         <div style="margin-top: 8px; border: 1px solid; padding:10px">
             {{result.question}}
@@ -24,8 +23,9 @@
             </form>
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 </body>
+
+
 
 </html>
