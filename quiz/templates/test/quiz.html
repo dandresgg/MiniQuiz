@@ -10,22 +10,26 @@
 
 <body>
     {% for result in results %}
+    {% if forloop.counter == count %}
     <div style="text-align: center;">
         <h2>{{result.category}}</h2>
-
         <div style="margin-top: 8px; border: 1px solid; padding:10px">
             {{result.question}}
         </div>
         <div style="margin-top: 1em; display:flex; justify-content:space-around">
-            <form method="POST">
+            <form method="POST" action='{% url 'quiz:question'%}'>
                 {% csrf_token %}
+                <input type="hidden" name="counter" value="{{ count }}" />
                 <button onclick="getData()">TRUE</button> <button onclick="getData()">FALSE</button>
             </form>
         </div>
+        <h3 style="margin-top:8px;"">{{ count }} of 10</h3>
     </div>
+    {% endif %}
     {% endfor %}
 </body>
 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 
 </html>
