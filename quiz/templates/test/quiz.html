@@ -7,7 +7,7 @@
 {% block container%}
     {% for result in results %}
     {% if forloop.counter == count %}
-    <div class="trivia"">
+    <div class="trivia">
         <h1>{{result.category}}</h1>
         <div class="question">
             <h2>{{result.question|safe}}</h2>
@@ -18,7 +18,7 @@
                 <input type="hidden" name="counter" value="{{ count }}" />
                 <input type="hidden" name="final_result_data" value="{{ final_result }}" />
                 <input type="hidden" name="response_data" value="{{ response }}" />
-                <button onclick="getData()" name="answer" value = "True">TRUE</button> <button onclick="getData()" name="answer" value="False"">FALSE</button>
+                <button onclick="getData()" name="answer" value = "True">TRUE</button> <button onclick="getData()" name="answer" value="False">FALSE</button>
             </form>
         </div>
         <h3 class="space">{{ count }} of 10</h3>
