@@ -1,4 +1,4 @@
-#How it works
+# How it works
 
 Once you download the repository, go to terminal(linux) and locate directory in terminal
 then run this command:
