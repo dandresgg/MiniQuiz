@@ -30,7 +30,7 @@ def quiz_app(request):
     else:
         quiz = Quiz.objects.create(data=data)
         return render(request, 'test/quiz.html', {
-        'results': quiz[0].data['results'],
+        'results': quiz.data['results'],
         'count':count,
         'final_result':final_result,})
 
