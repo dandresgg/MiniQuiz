@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block head_content %}
+    <title>Trivia Home</title>
+{% endblock %}
+
+{% block container %}
+<div class="trivia">
+<h1>Welcome to the trivia challenge!</h1>
+
+
+<div class="space">
+    <h2>You will be presented with 10 True False questions.</h2>
+</div>
+
+<div class="space">
+    Can you scare 100%
+</div>
+
+<form action="{% url "quiz:quiz" %}" class="space">
+    <Button>BEGIN</Button>
+</form>
+</div>
+{% endblock %}

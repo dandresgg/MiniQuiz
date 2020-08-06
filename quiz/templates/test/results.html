@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<html>
+{% extends "base.html" %}
 
-<body>
+{% block head_content %}
+    <title>Results</title>
+{% endblock %}
 
+{% block container %}
     <h2>Your Score</h2>
 
-    <h3>{{ final_result }}</h3>
+    <h3>{{ final_result }} / 10</h3>
 
-    {% for response in responses %} {% if response.10 %}
+    {% for response in responses %}
+    {% if response.10 %}
     <ul>
-        <li>
-            <p>{{ response|safe }}</p>
-        </li>
+            <p class="space2">{{ response|safe }}</p>
     </ul>
-    {% endif %} {% endfor %}
-</body>
+    {% endif %}
+    {% endfor %}
 
-</html>
+    <form action="{% url "quiz:home" %}">
+        <button>PLAY AGAIN?</button>
+    </form>
+{% endblock %}

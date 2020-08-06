@@ -5,6 +5,8 @@ import json
 
 from .models import Quiz
 # Create your views here.
+
+
 url = "https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean"
 
 
@@ -31,7 +33,7 @@ def quiz_app(request):
         'final_result':final_result,})
 
 def question(request):
-    '''advance questions'''
+    '''advance through questions'''
     quiz = Quiz.objects.all()
     count = int(request.POST.get('counter'))
     final_result = int(request.POST.get('final_result_data'))
@@ -55,3 +57,6 @@ def question(request):
         'final_result':final_result,
         'response':response})
 
+def home_page(request):
+    '''show main page'''
+    return render(request, 'test/main.html')

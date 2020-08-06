@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container_question {
+    width: 300px;
+    text-align: center;
+}
+
+.question {
+    margin-top: 8px;
+    border: 2px solid;
+    padding: 10px
+}
+
+.trivia {
+    border: 5px solid;
+    padding: 20px;
+}
+
+.space {
+    margin-top: 1em;
+    padding: 10px;
+}
+
+.space2 {
+    margin-top: 1em;
+    padding: 10px;
+    text-align: justify;
+}

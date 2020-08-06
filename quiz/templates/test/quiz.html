@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block head_content %}
+    <title>Questions</title>
+{% endblock %}
 
-<body>
+{% block container%}
     {% for result in results %}
     {% if forloop.counter == count %}
-    <div style="text-align: center;">
-        <h2>{{result.category}}</h2>
-        <div style="margin-top: 8px; border: 1px solid; padding:10px">
-            {{result.question|safe}}
+    <div class="trivia"">
+        <h1>{{result.category}}</h1>
+        <div class="question">
+            <h2>{{result.question|safe}}</h2>
         </div>
         <div style="margin-top: 1em; display:flex; justify-content:space-around">
-            <form method="POST" action='{% url 'quiz:question'%}'>
+            <form method="POST" action='{% url 'quiz:question'%}' class="space">
                 {% csrf_token %}
                 <input type="hidden" name="counter" value="{{ count }}" />
                 <input type="hidden" name="final_result_data" value="{{ final_result }}" />
@@ -24,13 +21,8 @@
                 <button onclick="getData()" name="answer" value = "True">TRUE</button> <button onclick="getData()" name="answer" value="False"">FALSE</button>
             </form>
         </div>
-        <h3 style="margin-top:8px;"">{{ count }} of 10</h3>
+        <h3 class="space">{{ count }} of 10</h3>
     </div>
     {% endif %}
     {% endfor %}
-</body>
-
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-
-</html>
+{% endblock %}
